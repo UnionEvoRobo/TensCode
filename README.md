@@ -4,9 +4,11 @@
 
 <h3>Tensegrity Robots</h3>
 Tensegrity robots are robots made from solid, rigid struts and springs or springy wires which connect the struts together. The connecting springs attach to the struts at the ends of the struts. A NASA tensegrity robot can be seen below:
+
 ![NASA's SUPERball tensegrity robot](https://github.com/JBoggsy/TensCode/blob/master/Miscellany/NASA_SUPERball.jpg)
 
 Tensegrities are interesting for a variety of reasons, but most prominently because they are highly mechanically dynamic. Their construction means that they can be expanded or compressed to a significant degree without harming the structural integrity of effectiveness of the robot. This means that they can be used in odd and unpredictable spaces which would be a challenge for normal robots. NASA has also identified tensegrities as [being useful as a landing vehicle in planetary exploration.](http://ti.arc.nasa.gov/tech/asr/intelligent-robotics/tensegrity/superballbot/) Below you can see the small, 5-bar tensegrity our team is using.
+
  ![Union College's own Vibrationally Actuated Limbless Tensegrity Robot, VALTR](https://github.com/JBoggsy/TensCode/blob/master/Miscellany/VALTR.jpg)
  
 <h3>The Problem</h3>
