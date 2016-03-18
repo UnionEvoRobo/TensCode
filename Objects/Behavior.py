@@ -36,14 +36,6 @@ class Behavior(object):
         """
         return self.__performTime
 
-    def set_moveVector(self, x, y, theta):
-        """
-        :param x: float horizontal travel distance from origin
-        :param y: float vertical travel distance from origin
-        :param theta: float heading change from original heading
-        """
-        self.__moveVector = [x, y, theta]
-
     def get_moveVector(self):
         """
         :return: 3-vector of floats (horz_dist, vert_dist, head_change)
@@ -58,19 +50,19 @@ class SimpleBehavior(Behavior):
     A SimpleBehavior represent one of the initially discovered Behaviors which
     contain only a single list of motor frequencies.
     """
-    def __init__(self, frequency_list):
+    def __init__(self, frequencyList):
         """
         Create a Behavior that represents the results of vibrating the motors
         at the given frequencies. The passed frequency list should be composed
         of integers within the motor bounds defined in ObjectConstants.py.
-        :param frequency_list: list of integers
+        :param frequencyList: list of integers
         """
         super(SimpleBehavior, self).__init__()
-        assert isinstance(frequency_list, list), "frequency list isn't a list!"
-        for fq in frequency_list:
+        assert isinstance(frequencyList, list), "frequency list isn't a list!"
+        for fq in frequencyList:
             if not (MOTOR_LOWER_BOUND < fq < MOTOR_UPPER_BOUND):
                 raise FrequencyError(fq)
-        self.__freq_list = frequency_list
+        self.__freqList = frequencyList
 
     def execute(self, ctrl):
         """
@@ -80,7 +72,7 @@ class SimpleBehavior(Behavior):
         :param ctrl: a TensegrityController object to signal
         """
         assert isinstance(ctrl, TensegrityController), "ctrl not a Controller"
-        ctrl.run_motors(self.__freq_list)
+        ctrl.run_motors(self.__freqList)
 
 
 class ComplexBehavior(Behavior):
@@ -90,19 +82,19 @@ class ComplexBehavior(Behavior):
     Behavior objects, which are the iterated through and executed when a
     ComplexBehavior is executed.
     """
-    def __init__(self, behavior_list):
+    def __init__(self, behaviorList):
         """
         Create a Behavior which represents chaining together many other
         Behaviors and executing them sequentially. The passed list should be
         entirely Behavior objects. Additional Behaviors can be added to the
         Behavior chain after instantiation, and the moveVector and performTime
         will be adjusted accordingly.
-        :param behavior_list: list of Behavior objects ORDER MATTERS
+        :param behaviorList: list of Behavior objects ORDER MATTERS
         """
         super(ComplexBehavior, self).__init__()
-        self.bhv_list = []
-        assert isinstance(behavior_list, list), "frequency list isn't a list!"
-        for bhv in behavior_list:
+        self.__bhvList = []
+        assert isinstance(behaviorList, list), "frequency list isn't a list!"
+        for bhv in behaviorList:
             assert isinstance(bhv, Behavior), "behavior list has non-behavior"
             self.add_behavior(bhv)
 
@@ -113,9 +105,9 @@ class ComplexBehavior(Behavior):
         bhv_mvVect = bhv.get_moveVector()
         for i in range(3):
             old_mvVect[i] += bhv_mvVect[i]
-        self.set_moveVector(bhv_mvVect[0], bhv_mvVect[1], bhv_mvVect[2])
-        self.bhv_list.append(bhv)
+        self.__moveVector = [bhv_mvVect[0], bhv_mvVect[1], bhv_mvVect[2]]
+        self.__bhvList.append(bhv)
 
     def execute(self, ctrl):
-        for bhv in self.bhv_list:
+        for bhv in self.__bhvList:
             bhv.execute(ctrl)
