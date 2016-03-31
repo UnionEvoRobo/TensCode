@@ -2,24 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b4ee7b2b-193b-4571-b867-a295dba53d07" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.gitignore" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/GAEvolver.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TensCode/.idea/dictionaries/James_Boggs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Objects/Repertoire.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/TensCodeDiagrams.mdj" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Objects/TensRobot.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TensCode/.idea/codeStyleSettings.xml" />
-      <change type="DELETED" beforePath="D:\Coding\TensCode\.idea\misc.xml" afterPath="" />
+      <change type="DELETED" beforePath="C:\Users\jmsbo\Coding\TensCode\.idea\misc.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/.gitignore" afterPath="$PROJECT_DIR$/../TensCode/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/.project" afterPath="$PROJECT_DIR$/../TensCode/.project" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/.pydevproject" afterPath="$PROJECT_DIR$/../TensCode/.pydevproject" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Data/Rotation/Stability/10MinOnTens" afterPath="$PROJECT_DIR$/../TensCode/Data/Rotation/Stability/10MinOnTens" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Data/ALIFE_14_data/AHandTesting25.txt" afterPath="$PROJECT_DIR$/../TensCode/Data/ALIFE_14_data/AHandTesting25.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objects/Behavior.py" afterPath="$PROJECT_DIR$/Objects/Behavior.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/Behavior.py" afterPath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/Behavior.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/Data/Behavioral Repertoire.txt" afterPath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/Data/Behavioral Repertoire.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Data/BehaviorRep/Behavioral Repertoire.txt" afterPath="$PROJECT_DIR$/../TensCode/Data/BehaviorRep/Behavioral Repertoire.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objects/Exceptions.py" afterPath="$PROJECT_DIR$/Objects/Exceptions.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/FileHandler.py" afterPath="$PROJECT_DIR$/../TensCode/FileHandler.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Data/ALIFE_14_data/First_25_good.txt" afterPath="$PROJECT_DIR$/../TensCode/Data/ALIFE_14_data/First_25_good.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Genotype.py" afterPath="$PROJECT_DIR$/../TensCode/Genotype.py" />
@@ -28,12 +21,10 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/MotorTests.py" afterPath="$PROJECT_DIR$/../TensCode/MotorTests.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Movement.py" afterPath="$PROJECT_DIR$/../TensCode/Movement.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Data/Notes.txt" afterPath="$PROJECT_DIR$/../TensCode/Data/Notes.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objects/ObjectConstants.py" afterPath="$PROJECT_DIR$/Objects/ObjectConstants.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Pie.py" afterPath="$PROJECT_DIR$/../TensCode/Pie.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Data/PopDataAnalyzer.py" afterPath="$PROJECT_DIR$/../TensCode/Data/PopDataAnalyzer.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/PopDataToCSV.py" afterPath="$PROJECT_DIR$/../TensCode/PopDataToCSV.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Population.py" afterPath="$PROJECT_DIR$/../TensCode/Population.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/Repertoire.py" afterPath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/Repertoire.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Data/RotationDataAnalyzer.py" afterPath="$PROJECT_DIR$/../TensCode/Data/RotationDataAnalyzer.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/SerialMotor.py" afterPath="$PROJECT_DIR$/../TensCode/SerialMotor.py" />
@@ -43,7 +34,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/TensRobot.py" afterPath="$PROJECT_DIR$/../TensCode/TensRobot.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/TensRobot.py" afterPath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/TensRobot.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/TensegrityBR.py" afterPath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/TensegrityBR.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objects/TensegrityController.py" afterPath="$PROJECT_DIR$/Objects/TensegrityController.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/TensegrityGA.py" afterPath="$PROJECT_DIR$/../TensCode/TensegrityGA.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/TensegrityGAHeadsUpBootstrap.py" afterPath="$PROJECT_DIR$/../TensCode/TensegrityGAHeadsUpBootstrap.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/TensegrityGANaiveBootstrapping.py" afterPath="$PROJECT_DIR$/../TensCode/TensegrityGANaiveBootstrapping.py" />
@@ -59,7 +49,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Data/PopData/HeadsUpBootstrapping/howLongItRanWithoutHumanInteraction.txt" afterPath="$PROJECT_DIR$/../TensCode/Data/PopData/HeadsUpBootstrapping/howLongItRanWithoutHumanInteraction.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Data/interactiveData.txt" afterPath="$PROJECT_DIR$/../TensCode/Data/interactiveData.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Data/interestingGaits.txt" afterPath="$PROJECT_DIR$/../TensCode/Data/interestingGaits.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/.idea/modules.xml" afterPath="$PROJECT_DIR$/../TensCode/.idea/modules.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/.idea/scopes/scope_settings.xml" afterPath="$PROJECT_DIR$/../TensCode/.idea/scopes/scope_settings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Data/ALIFE_14_data/second_25_good (scrubbed).txt" afterPath="$PROJECT_DIR$/../TensCode/Data/ALIFE_14_data/second_25_good (scrubbed).txt" />
@@ -90,20 +80,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="GAEvolver.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="GAEvolver.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/GAEvolver.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.16803955">
+              <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/.gitignore">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.056013178">
+            <state vertical-scroll-proportion="0.0">
               <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
               <folding />
             </state>
@@ -139,7 +129,7 @@
   <component name="ProjectFrameBounds">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
-    <option name="width" value="1376" />
+    <option name="width" value="1382" />
     <option name="height" value="744" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
@@ -190,10 +180,10 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../TensCode" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../tensVenv/Scripts/python.exe" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PythonContentEntriesConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
     <property name="FullScreen" value="false" />
   </component>
@@ -420,10 +410,10 @@
     <option name="totallyTimeSpent" value="16000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1376" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2489019" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -477,7 +467,7 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -492,8 +482,56 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.056013178">
+        <state vertical-scroll-proportion="0.0">
           <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GAEvolver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GAEvolver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="2" column="0" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/GAEvolver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.16803955">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
           <folding />
         </state>
       </provider>
