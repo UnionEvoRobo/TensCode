@@ -7,3 +7,4 @@ class TensRobot(object):
     repertoire and motor controller.
     """
     def __init__(self):
+        self.

@@ -1,113 +1,45 @@
-from TensegrityController import TensegrityController
-from Exceptions import FrequencyError
+from Exceptions import *
 from ObjectConstants import *
 
 
 class Behavior(object):
     """
     The Behavior class represents a single behavior which the tensegrity
-    knows. The Behavior class is abstract, and has two subclasses:
-    SimpleBehavior and ComplexBehavior. Every Behavior has a method
-    execute(TensegrityController ctrl) which uses the ctrl parameter to signal
-    the tensegrity on how to move. Every Behavior also has an instance variable
-    performTime which indicates the amount of time the Behavior will take in
-    seconds, and an instance variable moveVector which represents the movement
-    the Behavior will produce as a 3-vector <x, y, theta> where x and y are
-    horizontal and vertical distance from the initial position of the
-    tensegrity and theta is the angular distance in radians from the inital
-    heading of the tensegrity. Each Behavior has getters and setters for each
-    instance variable as well.
+    knows. Every Behavior has a method execute() which signals the tensegrity
+    on how to move. Every Behavior also has an instance variable performTime
+    which indicates the amount of time the Behavior will take in seconds, and
+    an instance variable moveVector which represents the movement the Behavior
+    will produce as a 3-vector <x, y, theta> where x and y are horizontal and
+    vertical distance from the initial position of the tensegrity and theta
+    is the angular distance in radians from the inital heading of the
+    tensegrity. Behavior has getters and setters for each instance variable as
+    well.
     """
 
-    def __init__(self):
-        self.__performTime = 0
-        self.__moveVector = [0,0,0]
+    def __init__(self, instruction_list, num_motors):
+        self.__num_motors = num_motors
+        self.__instr_list = instruction_list
+        for instr in self.__instr_list:
+            if not self.__verify_instr(instr):
+                raise InstructionMotorCountError(instr, self.__num_motors)
 
-    def set_performTime(self, time):
+    def __verify_instr(self, instruction):
         """
-        :param time: Time in seconds
-        """
-        self.__performTime = time
+        Check whether the instruction is a valid one. This means that it
+        checks to make sure the instruction uses the appropriate number of
+        motors and that the frequencies of the instruction are all in the
+        appropriate range.
 
-    @property
-    def get_performTime(self):
+        :param instruction: A dict, where the keys is the motor controller ID
+        and the value is that motor's frequency.
         """
-        :return: Time to perform behavior in seconds
-        """
-        return self.__performTime
-
-    def get_moveVector(self):
-        """
-        :return: 3-vector of floats (horz_dist, vert_dist, head_change)
-        """
-        return self.__moveVector
-
-    def execute(self, ctrl): pass
-
-
-class SimpleBehavior(Behavior):
-    """
-    A SimpleBehavior represent one of the initially discovered Behaviors which
-    contain only a single list of motor frequencies.
-    """
-    def __init__(self, frequencyList):
-        """
-        Create a Behavior that represents the results of vibrating the motors
-        at the given frequencies. The passed frequency list should be composed
-        of integers within the motor bounds defined in ObjectConstants.py.
-        :param frequencyList: list of integers
-        """
-        super(SimpleBehavior, self).__init__()
-        assert isinstance(frequencyList, list), "frequency list isn't a list!"
-        for fq in frequencyList:
-            if not (MOTOR_LOWER_BOUND < fq < MOTOR_UPPER_BOUND):
-                raise FrequencyError(fq)
-        self.__freqList = frequencyList
+        assert instruction is dict, "instruction is not a dict!"
+        motor_num_correct = len(instruction) == self.__num_motors
+        for freq in instruction.values():
+            if not (MOTOR_LOWER_BOUND < freq < MOTOR_UPPER_BOUND):
+                raise FrequencyError(freq)
+        return motor_num_correct
 
     def execute(self, ctrl):
-        """
-        Send the signal to the passed in TensegrityController to run the
-        motors at the appropriate frequencies given in the freq_list, for
-        the amount of of time given by self.__performTime.
-        :param ctrl: a TensegrityController object to signal
-        """
-        assert isinstance(ctrl, TensegrityController), "ctrl not a Controller"
-        ctrl.run_motors(self.__freqList)
-
-
-class ComplexBehavior(Behavior):
-    """
-    A ComplexBehavior is a calculated Behavior which combines two or more other
-    Behaviors into a single new one. Thus ComplexBehaviors have a list of other
-    Behavior objects, which are the iterated through and executed when a
-    ComplexBehavior is executed.
-    """
-    def __init__(self, behaviorList):
-        """
-        Create a Behavior which represents chaining together many other
-        Behaviors and executing them sequentially. The passed list should be
-        entirely Behavior objects. Additional Behaviors can be added to the
-        Behavior chain after instantiation, and the moveVector and performTime
-        will be adjusted accordingly.
-        :param behaviorList: list of Behavior objects ORDER MATTERS
-        """
-        super(ComplexBehavior, self).__init__()
-        self.__bhvList = []
-        assert isinstance(behaviorList, list), "frequency list isn't a list!"
-        for bhv in behaviorList:
-            assert isinstance(bhv, Behavior), "behavior list has non-behavior"
-            self.add_behavior(bhv)
-
-    def add_behavior(self, bhv):
-        pTime = self.get_performTime + bhv.get_performTime
-        self.set_performTime(pTime)
-        old_mvVect = self.get_moveVector()
-        bhv_mvVect = bhv.get_moveVector()
-        for i in range(3):
-            old_mvVect[i] += bhv_mvVect[i]
-        self.__moveVector = [bhv_mvVect[0], bhv_mvVect[1], bhv_mvVect[2]]
-        self.__bhvList.append(bhv)
-
-    def execute(self, ctrl):
-        for bhv in self.__bhvList:
-            bhv.execute(ctrl)
+        for instr in self.__instr_list:
+            ctrl.run_instructions(instr)
