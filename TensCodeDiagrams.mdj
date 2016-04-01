@@ -795,7 +795,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+getPerformanceAt(x: int, y: int, theta: int): int",
+											"text": "+getPerformanceAt(point: Point): int",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										},
@@ -823,7 +823,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+getBehaviorAt(x: int, y: int, theta: int): Behavior",
+											"text": "+getBehaviorAt(point: Point): Behavior",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										},
@@ -851,7 +851,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "+comparePerformance(comp_peformTime: int, cellLocation: List<int>): boolean",
+											"text": "+comparePerformance(comp_peformTime: int, cellLocation: Point): boolean",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										},
@@ -1169,7 +1169,7 @@
 											"height": 13,
 											"autoResize": false,
 											"underline": false,
-											"text": "-freqList: 2D-Array<int>",
+											"text": "-instruction_list: Array",
 											"horizontalAlignment": 0,
 											"verticalAlignment": 5
 										}
@@ -1397,7 +1397,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 820,
-											"top": 20,
+											"top": 120,
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -1421,7 +1421,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 765,
-											"top": 237,
+											"top": 287,
 											"width": 136.18896484375,
 											"height": 13,
 											"autoResize": false,
@@ -1446,7 +1446,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 820,
-											"top": 20,
+											"top": 120,
 											"width": 119.90087890625,
 											"height": 13,
 											"autoResize": false,
@@ -1471,7 +1471,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 820,
-											"top": 20,
+											"top": 120,
 											"width": 0,
 											"height": 13,
 											"autoResize": false,
@@ -1490,7 +1490,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 760,
-									"top": 230,
+									"top": 280,
 									"width": 146.18896484375,
 									"height": 25,
 									"autoResize": false,
@@ -1526,7 +1526,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 760,
-									"top": 255,
+									"top": 305,
 									"width": 146.18896484375,
 									"height": 10,
 									"autoResize": false
@@ -1560,7 +1560,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 765,
-											"top": 270,
+											"top": 320,
 											"width": 136.18896484375,
 											"height": 13,
 											"autoResize": false,
@@ -1588,7 +1588,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 765,
-											"top": 285,
+											"top": 335,
 											"width": 136.18896484375,
 											"height": 13,
 											"autoResize": false,
@@ -1616,7 +1616,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 765,
-											"top": 300,
+											"top": 350,
 											"width": 136.18896484375,
 											"height": 13,
 											"autoResize": false,
@@ -1636,7 +1636,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 760,
-									"top": 265,
+									"top": 315,
 									"width": 146.18896484375,
 									"height": 53,
 									"autoResize": false
@@ -1660,7 +1660,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 410,
-									"top": 10,
+									"top": 60,
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -1684,7 +1684,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 410,
-									"top": 10,
+									"top": 60,
 									"width": 10,
 									"height": 10,
 									"autoResize": false
@@ -1700,7 +1700,7 @@
 							"containerChangeable": true,
 							"containerExtending": false,
 							"left": 760,
-							"top": 230,
+							"top": 280,
 							"width": 146.18896484375,
 							"height": 88,
 							"autoResize": false,
@@ -2413,62 +2413,6 @@
 										},
 										{
 											"_type": "UMLOperationView",
-											"_id": "AAAAAAFS8WJ3upCZV6s=",
-											"_parent": {
-												"$ref": "AAAAAAFS8U5PPYBk7cY="
-											},
-											"model": {
-												"$ref": "AAAAAAFS8WJ3m5CTrE4="
-											},
-											"visible": true,
-											"enabled": true,
-											"lineColor": "#000000",
-											"fillColor": "#ffffff",
-											"fontColor": "#000000",
-											"font": "Arial;13;0",
-											"showShadow": false,
-											"containerChangeable": false,
-											"containerExtending": false,
-											"left": 655,
-											"top": 123,
-											"width": 302.34521484375,
-											"height": 13,
-											"autoResize": false,
-											"underline": false,
-											"text": "+addController(motorController: MotorController)",
-											"horizontalAlignment": 0,
-											"verticalAlignment": 5
-										},
-										{
-											"_type": "UMLOperationView",
-											"_id": "AAAAAAFS8WZh0ZG0tgU=",
-											"_parent": {
-												"$ref": "AAAAAAFS8U5PPYBk7cY="
-											},
-											"model": {
-												"$ref": "AAAAAAFS8WZhqJGuOTo="
-											},
-											"visible": true,
-											"enabled": true,
-											"lineColor": "#000000",
-											"fillColor": "#ffffff",
-											"fontColor": "#000000",
-											"font": "Arial;13;0",
-											"showShadow": false,
-											"containerChangeable": false,
-											"containerExtending": false,
-											"left": 655,
-											"top": 138,
-											"width": 302.34521484375,
-											"height": 13,
-											"autoResize": false,
-											"underline": false,
-											"text": "+removeController(motorController: MotorController)",
-											"horizontalAlignment": 0,
-											"verticalAlignment": 5
-										},
-										{
-											"_type": "UMLOperationView",
 											"_id": "AAAAAAFS8WfnKZLzTT0=",
 											"_parent": {
 												"$ref": "AAAAAAFS8U5PPYBk7cY="
@@ -2486,7 +2430,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 655,
-											"top": 153,
+											"top": 123,
 											"width": 302.34521484375,
 											"height": 13,
 											"autoResize": false,
@@ -2514,7 +2458,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 655,
-											"top": 168,
+											"top": 138,
 											"width": 302.34521484375,
 											"height": 13,
 											"autoResize": false,
@@ -2542,7 +2486,7 @@
 											"containerChangeable": false,
 											"containerExtending": false,
 											"left": 655,
-											"top": 183,
+											"top": 153,
 											"width": 302.34521484375,
 											"height": 13,
 											"autoResize": false,
@@ -2564,7 +2508,7 @@
 									"left": 650,
 									"top": 103,
 									"width": 312.34521484375,
-									"height": 98,
+									"height": 68,
 									"autoResize": false
 								},
 								{
@@ -3942,7 +3886,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 797,
-									"top": 208,
+									"top": 233,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -3975,7 +3919,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 782,
-									"top": 208,
+									"top": 233,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -4008,7 +3952,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 826,
-									"top": 209,
+									"top": 234,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -4041,7 +3985,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 797,
-									"top": 198,
+									"top": 248,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -4074,7 +4018,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 783,
-									"top": 195,
+									"top": 245,
 									"width": 0,
 									"height": 13,
 									"autoResize": false,
@@ -4107,7 +4051,7 @@
 									"containerChangeable": false,
 									"containerExtending": false,
 									"left": 815,
-									"top": 202,
+									"top": 252,
 									"width": 19.5126953125,
 									"height": 13,
 									"autoResize": false,
@@ -4287,7 +4231,7 @@
 								"$ref": "AAAAAAFS5oveznJyq2g="
 							},
 							"lineStyle": 0,
-							"points": "812:230;812:200",
+							"points": "812:280;812:200",
 							"stereotypeDisplay": "label",
 							"showVisibility": true,
 							"showProperty": true,
@@ -5063,43 +5007,13 @@
 									"_parent": {
 										"$ref": "AAAAAAFS5rwXJMkT+gA="
 									},
-									"name": "x",
+									"name": "point",
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
-									"type": "int",
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "in"
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFS5r1Tg8lh6EQ=",
-									"_parent": {
-										"$ref": "AAAAAAFS5rwXJMkT+gA="
+									"type": {
+										"$ref": "AAAAAAFS8U+zdoFgE1w="
 									},
-									"name": "y",
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": "int",
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "in"
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFS5r2DC8mEcJk=",
-									"_parent": {
-										"$ref": "AAAAAAFS5rwXJMkT+gA="
-									},
-									"name": "theta",
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": "int",
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,
@@ -5143,43 +5057,13 @@
 									"_parent": {
 										"$ref": "AAAAAAFS5sDHoMpbEGE="
 									},
-									"name": "x",
+									"name": "point",
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
-									"type": "int",
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "in"
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFS5sE2WMqw0JI=",
-									"_parent": {
-										"$ref": "AAAAAAFS5sDHoMpbEGE="
+									"type": {
+										"$ref": "AAAAAAFS8U+zdoFgE1w="
 									},
-									"name": "y",
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": "int",
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "in"
-								},
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFS5sFjsMrctZA=",
-									"_parent": {
-										"$ref": "AAAAAAFS5sDHoMpbEGE="
-									},
-									"name": "theta",
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": "int",
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,
@@ -5245,7 +5129,9 @@
 									"visibility": "public",
 									"isStatic": false,
 									"isLeaf": false,
-									"type": "List<int>",
+									"type": {
+										"$ref": "AAAAAAFS8U+zdoFgE1w="
+									},
 									"isReadOnly": false,
 									"isOrdered": false,
 									"isUnique": false,
@@ -5356,11 +5242,11 @@
 							"_parent": {
 								"$ref": "AAAAAAFS5ovNlHJGPQo="
 							},
-							"name": "freqList",
+							"name": "instruction_list",
 							"visibility": "private",
 							"isStatic": false,
 							"isLeaf": false,
-							"type": "2D-Array<int>",
+							"type": "Array",
 							"isReadOnly": false,
 							"isOrdered": false,
 							"isUnique": false,
@@ -5677,74 +5563,6 @@
 									"_id": "AAAAAAFS8WC3yJAQooI=",
 									"_parent": {
 										"$ref": "AAAAAAFS8WCIgY+dXjQ="
-									},
-									"name": "motorController",
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": {
-										"$ref": "AAAAAAFS5oveznJwANI="
-									},
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "in"
-								}
-							],
-							"concurrency": "sequential",
-							"isQuery": false,
-							"isAbstract": false
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFS8WJ3m5CTrE4=",
-							"_parent": {
-								"$ref": "AAAAAAFS8U5PPIBbsEI="
-							},
-							"name": "addController",
-							"visibility": "public",
-							"isStatic": false,
-							"isLeaf": false,
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFS8WKupJEh1dg=",
-									"_parent": {
-										"$ref": "AAAAAAFS8WJ3m5CTrE4="
-									},
-									"name": "motorController",
-									"visibility": "public",
-									"isStatic": false,
-									"isLeaf": false,
-									"type": {
-										"$ref": "AAAAAAFS5oveznJwANI="
-									},
-									"isReadOnly": false,
-									"isOrdered": false,
-									"isUnique": false,
-									"direction": "in"
-								}
-							],
-							"concurrency": "sequential",
-							"isQuery": false,
-							"isAbstract": false
-						},
-						{
-							"_type": "UMLOperation",
-							"_id": "AAAAAAFS8WZhqJGuOTo=",
-							"_parent": {
-								"$ref": "AAAAAAFS8U5PPIBbsEI="
-							},
-							"name": "removeController",
-							"visibility": "public",
-							"isStatic": false,
-							"isLeaf": false,
-							"parameters": [
-								{
-									"_type": "UMLParameter",
-									"_id": "AAAAAAFS8WaPkZIh4JA=",
-									"_parent": {
-										"$ref": "AAAAAAFS8WZhqJGuOTo="
 									},
 									"name": "motorController",
 									"visibility": "public",

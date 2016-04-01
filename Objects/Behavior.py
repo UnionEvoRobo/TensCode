@@ -43,3 +43,5 @@ class Behavior(object):
     def execute(self, ctrl):
         for instr in self.__instr_list:
             ctrl.run_instructions(instr)
+
+    # TODO Implement saving and loading a behavior

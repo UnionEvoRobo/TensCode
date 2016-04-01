@@ -1,11 +1,12 @@
-# TODO Implement TensegrityController and TestTensController
+from json import loads, dumps
+
 class Locomotor(object):
     """
     Class which holds any number of motor controllers and controls them. The
     run_motors() function can receive a list of motor frequencies which are
     then assigned to each motor.
     """
-    def __init__(self, motor_list):
+    def __init__(self, motor_list=None):
         """
         Give a list of motors to the Locomotor. In the future, we might test
         each one.
@@ -13,8 +14,9 @@ class Locomotor(object):
         that the order of the motor list is maintained throughout runs of the
         code.
         """
-        self.__motor_num = len(motor_list)
-        self.__motor_dict = dict(zip(range(self.__motor_num), motor_list))
+        if motor_list is not None:
+            self.__motor_num = len(motor_list)
+            self.__motor_dict = dict(zip(range(self.__motor_num), motor_list))
 
     def run_instructions(self, freq_dict):
         """
@@ -29,6 +31,33 @@ class Locomotor(object):
 
     def get_motor_num(self): return self.__motor_num
 
-    def save_locomotr(self): return "|{mNum}, {mDict}|".format(mNum=self.__motor_num,
-                                                               mDict=self.__motor_dict
-                                                               )
+    def save_locomotor(self):
+        return "{mNum}, {mDict}".format(mNum=self.__motor_num,
+                                          mDict=dumps(self.__motor_dict)
+                                          )
+
+    def load_locomotor(self, string):
+        data_parts = string.split(',')
+        self.__motor_num = int(data_parts[0])
+        self.__motor_dict = loads(data_parts[1])
+
+    # TODO Implement saving and loading a locomotor
+
+
+class MotorController(object):
+    """
+    Class to control an individual motor. This is meant to be an abstract-like
+    class, so that we can impleent a number of subclasses which each control
+    different types of motors e.g. serial USB motors, bluetooth controlled
+    motors, etc.
+    """
+    NEXT_MOTOR_ID = 0
+
+    def __init__(self):
+        self.motor_id = MotorController.NEXT_MOTOR_ID
+        MotorController.NEXT_MOTOR_ID += 1
+
+    def run_motor(self, freq):
+        print("Running motor {id} @ {freq}\n".format(id = self.motor_id,
+                                                   freq=freq
+                                                   ))
