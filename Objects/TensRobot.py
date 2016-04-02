@@ -49,6 +49,18 @@ class TensRobot(object):
         rel_distance = origin_location.find_rel_dist(self.__curr_location)
         return rel_distance
 
+    def add_behavior(self, bhvr, p_time, rel_dist):
+        """
+        Add the given behavior and its information to the tensegirty's
+        repertoire.
+        :param bhvr: Behavior to add
+        :param p_time: bhvr performance time
+        :param rel_dist: relative distance bhvr travels.
+        :return: True is added, false if not better than existing behavior.
+        """
+        return self.__repertoire.add_behavior(bhvr, p_time, rel_dist)
+
+
     @property
     def __curr_location(self):
         # TODO Implement ability for tens to find its location

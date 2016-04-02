@@ -48,10 +48,19 @@ class Repertoire(object):
         behavior is better than the best previous performance time.
         :param bhvr: The Behavior which reaches point P
         :param p: Point to reach
+        :return: True if the behavior was added.
         """
-        if self.compare_performance(p_time, p):
+        if bhvr in self:
+            if self.compare_performance(p_time, p):
+                self.__behaviors[p.x, p.y, p.theta] = bhvr
+                self.__perform_times[p.x, p.y, p.theta] = p_time
+                return True
+            else:
+                return False
+        else:
             self.__behaviors[p.x, p.y, p.theta] = bhvr
             self.__perform_times[p.x, p.y, p.theta] = p_time
+            return True
 
     def __contains__(self, item):
         return item in self.__behaviors
