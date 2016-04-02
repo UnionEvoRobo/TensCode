@@ -53,4 +53,7 @@ class Repertoire(object):
             self.__behaviors[p.x, p.y, p.theta] = bhvr
             self.__perform_times[p.x, p.y, p.theta] = p_time
 
+    def __contains__(self, item):
+        return item in self.__behaviors
+
     # TODO Implement saving and loading repertoires

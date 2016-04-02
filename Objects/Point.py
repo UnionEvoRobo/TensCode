@@ -27,16 +27,13 @@ class Point(object):
         from this point to p.
         """
         assert isinstance(p, Point), "p should be a Point"
-        rel_x = self.x - p.x
-        rel_y = self.y - p.y
-        rel_theta = (self.theta - p.theta) % 360
-        return Point(rel_x, rel_y, rel_theta)
+        return self - p
 
     def __sub__(self, other):
         if isinstance(other, Point):
             return Point(self.x-other.x,
                          self.y-other.y,
-                         self.theta-other.theta
+                         (self.theta-other.theta) % 360
                          )
         else:
             msg = 'unsupported operand type(s) for -: Point and {t}'.format(t=type(other))
@@ -50,4 +47,22 @@ class Point(object):
                          )
         else:
             msg = 'unsupported operand type(s) for -: Point and {t}'.format(t=type(other))
+            raise TypeError(msg)
+
+    def __eq__(self, other):
+        if isinstance(other, Point):
+            return self.x == other.x \
+                   and self.y == other.y \
+                   and self.theta == other.theta
+        else:
+            msg = 'unsupported operand type(s) for ==: Point and {t}'.format(t=type(other))
+            raise TypeError(msg)
+
+    def __ne__(self, other):
+        if isinstance(other, Point):
+            return self.x != other.x \
+                   or self.y != other.y \
+                   or self.theta != other.theta
+        else:
+            msg = 'unsupported operand type(s) for !=: Point and {t}'.format(t=type(other))
             raise TypeError(msg)

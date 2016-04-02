@@ -24,6 +24,7 @@ class Locomotor(object):
         :param freq_dict: A dict of motor ids and their frequencies
         :return: A happily vibrating tensegrity.
         """
+        # TODO Implement a timer so it only runs for one second
         assert len(freq_dict) == self.__motor_num, "invalid motor amount"
         for mNum in freq_dict.keys():
             print "Running motor {mNum} at {mFreq}".format(mNum=mNum,

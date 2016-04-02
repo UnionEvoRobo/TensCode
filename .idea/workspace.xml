@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="b4ee7b2b-193b-4571-b867-a295dba53d07" name="Default" comment="">
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TensCode/.idea/dictionaries/James_Boggs.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Objects/Point.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/Objects/SaveLoad.py" />
       <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../TensCode/.idea/codeStyleSettings.xml" />
       <change type="DELETED" beforePath="C:\Users\jmsbo\Coding\TensCode\.idea\misc.xml" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/.gitignore" afterPath="$PROJECT_DIR$/../TensCode/.gitignore" />
@@ -12,7 +10,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/.pydevproject" afterPath="$PROJECT_DIR$/../TensCode/.pydevproject" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Data/Rotation/Stability/10MinOnTens" afterPath="$PROJECT_DIR$/../TensCode/Data/Rotation/Stability/10MinOnTens" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Data/ALIFE_14_data/AHandTesting25.txt" afterPath="$PROJECT_DIR$/../TensCode/Data/ALIFE_14_data/AHandTesting25.txt" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objects/Behavior.py" afterPath="$PROJECT_DIR$/Objects/Behavior.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/Behavior.py" afterPath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/Behavior.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/Data/Behavioral Repertoire.txt" afterPath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/Data/Behavioral Repertoire.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Data/BehaviorRep/Behavioral Repertoire.txt" afterPath="$PROJECT_DIR$/../TensCode/Data/BehaviorRep/Behavioral Repertoire.txt" />
@@ -22,16 +19,19 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Interactive.py" afterPath="$PROJECT_DIR$/../TensCode/Interactive.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objects/Locomotor.py" afterPath="$PROJECT_DIR$/Objects/Locomotor.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Locus.py" afterPath="$PROJECT_DIR$/../TensCode/Locus.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy-1.11.0.dist-info/METADATA" afterPath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy-1.11.0.dist-info/METADATA" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/MotorTests.py" afterPath="$PROJECT_DIR$/../TensCode/MotorTests.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Movement.py" afterPath="$PROJECT_DIR$/../TensCode/Movement.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Data/Notes.txt" afterPath="$PROJECT_DIR$/../TensCode/Data/Notes.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objects/ObjectConstants.py" afterPath="$PROJECT_DIR$/Objects/ObjectConstants.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Pie.py" afterPath="$PROJECT_DIR$/../TensCode/Pie.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objects/Point.py" afterPath="$PROJECT_DIR$/Objects/Point.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Data/PopDataAnalyzer.py" afterPath="$PROJECT_DIR$/../TensCode/Data/PopDataAnalyzer.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/PopDataToCSV.py" afterPath="$PROJECT_DIR$/../TensCode/PopDataToCSV.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Population.py" afterPath="$PROJECT_DIR$/../TensCode/Population.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/Python-ast.h" afterPath="$PROJECT_DIR$/TensVenv/Include/Python-ast.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/Python.h" afterPath="$PROJECT_DIR$/TensVenv/Include/Python.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy-1.11.0.dist-info/RECORD" afterPath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy-1.11.0.dist-info/RECORD" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/site-packages/pip-8.1.1.dist-info/RECORD" afterPath="$PROJECT_DIR$/TensVenv/Lib/site-packages/pip-8.1.1.dist-info/RECORD" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/site-packages/setuptools-20.6.7.dist-info/RECORD" afterPath="$PROJECT_DIR$/TensVenv/Lib/site-packages/setuptools-20.6.7.dist-info/RECORD" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Objects/Repertoire.py" afterPath="$PROJECT_DIR$/Objects/Repertoire.py" />
@@ -54,10 +54,16 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/TensegrityTracker.py" afterPath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/TensegrityTracker.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/TensegrityTrackerBR.py" afterPath="$PROJECT_DIR$/../TensCode/TensegrityTrackerBR.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/UserDict.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/UserDict.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy-1.11.0.dist-info/WHEEL" afterPath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy-1.11.0.dist-info/WHEEL" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/WebcamImageGetter.py" afterPath="$PROJECT_DIR$/../TensCode/WebcamImageGetter.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/WebcamImageGetter.py" afterPath="$PROJECT_DIR$/../TensCode/Behavioral Repertoire/WebcamImageGetter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/__config__.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/__config__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/distutils/__config__.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/distutils/__config__.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/encodings/__init__.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/encodings/__init__.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/core/include/numpy/__multiarray_api.h" afterPath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/core/include/numpy/__multiarray_api.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/core/include/numpy/__ufunc_api.h" afterPath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/core/include/numpy/__ufunc_api.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/_abcoll.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/_abcoll.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/core/include/numpy/_numpyconfig.h" afterPath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/core/include/numpy/_numpyconfig.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/_weakrefset.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/_weakrefset.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/abc.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/abc.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/abstract.h" afterPath="$PROJECT_DIR$/TensVenv/Include/abstract.h" />
@@ -140,6 +146,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/encodings/euc_jp.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/encodings/euc_jp.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/encodings/euc_kr.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/encodings/euc_kr.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/eval.h" afterPath="$PROJECT_DIR$/TensVenv/Include/eval.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Scripts/f2py.py" afterPath="$PROJECT_DIR$/TensVenv/Scripts/f2py.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/fileobject.h" afterPath="$PROJECT_DIR$/TensVenv/Include/fileobject.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/floatobject.h" afterPath="$PROJECT_DIR$/TensVenv/Include/floatobject.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/fnmatch.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/fnmatch.py" />
@@ -210,10 +217,13 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/memoryobject.h" afterPath="$PROJECT_DIR$/TensVenv/Include/memoryobject.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/metagrammar.h" afterPath="$PROJECT_DIR$/TensVenv/Include/metagrammar.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/methodobject.h" afterPath="$PROJECT_DIR$/TensVenv/Include/methodobject.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/core/lib/npy-pkg-config/mlib.ini" afterPath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/core/lib/npy-pkg-config/mlib.ini" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/modsupport.h" afterPath="$PROJECT_DIR$/TensVenv/Include/modsupport.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/moduleobject.h" afterPath="$PROJECT_DIR$/TensVenv/Include/moduleobject.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/.idea/modules.xml" afterPath="$PROJECT_DIR$/../TensCode/.idea/modules.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/core/include/numpy/multiarray_api.txt" afterPath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/core/include/numpy/multiarray_api.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/node.h" afterPath="$PROJECT_DIR$/TensVenv/Include/node.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/core/lib/npy-pkg-config/npymath.ini" afterPath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/core/lib/npy-pkg-config/npymath.ini" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/ntpath.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/ntpath.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/object.h" afterPath="$PROJECT_DIR$/TensVenv/Include/object.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/objimpl.h" afterPath="$PROJECT_DIR$/TensVenv/Include/objimpl.h" />
@@ -261,6 +271,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/encodings/shift_jis.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/encodings/shift_jis.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/encodings/shift_jis_2004.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/encodings/shift_jis_2004.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/encodings/shift_jisx0213.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/encodings/shift_jisx0213.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/distutils/site.cfg" afterPath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/distutils/site.cfg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/sliceobject.h" afterPath="$PROJECT_DIR$/TensVenv/Include/sliceobject.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/sre.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/sre.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/sre_compile.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/sre_compile.py" />
@@ -282,6 +293,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/tupleobject.h" afterPath="$PROJECT_DIR$/TensVenv/Include/tupleobject.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/types.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/types.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/ucnhash.h" afterPath="$PROJECT_DIR$/TensVenv/Include/ucnhash.h" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/core/include/numpy/ufunc_api.txt" afterPath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/core/include/numpy/ufunc_api.txt" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/encodings/undefined.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/encodings/undefined.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/encodings/unicode_escape.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/encodings/unicode_escape.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/encodings/unicode_internal.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/encodings/unicode_internal.py" />
@@ -297,6 +309,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/encodings/utf_8_sig.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/encodings/utf_8_sig.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../TensCode/utilities.py" afterPath="$PROJECT_DIR$/../TensCode/utilities.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/encodings/uu_codec.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/encodings/uu_codec.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/version.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/site-packages/numpy/version.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/warnings.h" afterPath="$PROJECT_DIR$/TensVenv/Include/warnings.h" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Lib/warnings.py" afterPath="$PROJECT_DIR$/TensVenv/Lib/warnings.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/TensVenv/Include/weakrefobject.h" afterPath="$PROJECT_DIR$/TensVenv/Include/weakrefobject.h" />
@@ -327,8 +340,8 @@
       <file leaf-file-name="TensRobot.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Objects/TensRobot.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.88772845">
-              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.72773975">
+              <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
               <folding>
                 <element signature="e#0#29#0" expanded="true" />
               </folding>
@@ -336,34 +349,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ObjectConstants.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Objects/ObjectConstants.py">
+      <file leaf-file-name="Behavior.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Objects/Behavior.py">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
+              <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Locomotor.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Objects/Locomotor.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Repertoire.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Objects/Repertoire.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="55" column="6" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
-              <folding>
-                <element signature="e#0#22#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -393,12 +384,12 @@
         <option value="$PROJECT_DIR$/Objects/TensegrityController.py" />
         <option value="$PROJECT_DIR$/Objects/Exceptions.py" />
         <option value="$PROJECT_DIR$/Objects/SaveLoad.py" />
-        <option value="$PROJECT_DIR$/Objects/Repertoire.py" />
-        <option value="$PROJECT_DIR$/Objects/Behavior.py" />
-        <option value="$PROJECT_DIR$/Objects/Locomotor.py" />
         <option value="$PROJECT_DIR$/Objects/ObjectConstants.py" />
-        <option value="$PROJECT_DIR$/Objects/TensRobot.py" />
+        <option value="$PROJECT_DIR$/Objects/Behavior.py" />
         <option value="$PROJECT_DIR$/Objects/Point.py" />
+        <option value="$PROJECT_DIR$/Objects/Locomotor.py" />
+        <option value="$PROJECT_DIR$/Objects/Repertoire.py" />
+        <option value="$PROJECT_DIR$/Objects/TensRobot.py" />
       </list>
     </option>
   </component>
@@ -440,7 +431,6 @@
     </navigator>
     <panes>
       <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -485,6 +475,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -721,12 +712,12 @@
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25718608" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26096824" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32843137" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32789558" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -767,6 +758,16 @@
     <entry file="file://$PROJECT_DIR$/Objects/TensRobot.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Objects/TensRobot.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
           <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
@@ -788,9 +789,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#24#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -815,9 +814,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#24#0" expanded="false" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -825,7 +822,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -910,7 +906,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.112026356">
           <caret line="4" column="42" selection-start-line="4" selection-start-column="42" selection-end-line="4" selection-end-column="42" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -918,43 +913,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.64415157">
           <caret line="23" column="0" selection-start-line="23" selection-start-column="0" selection-end-line="23" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Objects/Behavior.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88797367">
-          <caret line="46" column="50" selection-start-line="46" selection-start-column="50" selection-end-line="46" selection-end-column="50" />
-          <folding>
-            <element signature="e#0#24#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Objects/Repertoire.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="6" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#22#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Objects/ObjectConstants.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="6" column="21" selection-start-line="6" selection-start-column="21" selection-end-line="6" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Objects/Locomotor.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="8" column="23" selection-start-line="8" selection-start-column="23" selection-end-line="8" selection-end-column="38" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -962,22 +920,55 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.33159268">
           <caret line="578" column="8" selection-start-line="578" selection-start-column="8" selection-end-line="578" selection-end-column="8" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Objects/Point.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.84334207">
-          <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="0" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Objects/ObjectConstants.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.17465754">
+          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Objects/Locomotor.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.27226028">
+          <caret line="26" column="63" selection-start-line="26" selection-start-column="63" selection-end-line="26" selection-end-column="63" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Objects/Repertoire.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8544521">
+          <caret line="56" column="39" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="39" />
+          <folding>
+            <element signature="e#0#22#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Objects/Behavior.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="0" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Objects/TensRobot.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.88772845">
-          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.72773975">
+          <caret line="49" column="27" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
           <folding>
             <element signature="e#0#29#0" expanded="true" />
           </folding>
