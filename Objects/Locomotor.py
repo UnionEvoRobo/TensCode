@@ -1,10 +1,13 @@
+import time
+import serial
 from json import loads, dumps
 
 class Locomotor(object):
     """
     Class which holds any number of motor controllers and controls them. The
     run_motors() function can receive a list of motor frequencies which are
-    then assigned to each motor.
+    then assigned to each motor. The object can be indexed in the standard way
+    and can have elements added to it or altered in a similar way to a dict.
     """
     def __init__(self, motor_list=None):
         """
@@ -27,10 +30,26 @@ class Locomotor(object):
         # TODO Implement a timer so it only runs for one second
         assert len(freq_dict) == self.__motor_num, "invalid motor amount"
         for mNum in freq_dict.keys():
-            print "Running motor {mNum} at {mFreq}".format(mNum=mNum,
-                                                           mFreq=freq_dict[mNum])
+            self.__motor_dict[mNum].run_motor(freq_dict[mNum])
 
     def get_motor_num(self): return self.__motor_num
+
+    def __len__(self):
+        return self.__motor_num
+
+    def __getitem__(self, item):
+        if item < self.__motor_num:
+            return self.__motor_dict[item]
+        else:
+            msg = "Index {} exceeds motor number".format(item)
+            raise IndexError(msg)
+
+    def __setitem__(self, key, value):
+        if key < self.__motor_num:
+            self.__motor_dict[key] = value
+        else:
+            msg = "Index {} exceeds motor number".format(key)
+            raise IndexError(msg)
 
     def save_locomotor(self):
         return "{mNum}, {mDict}".format(mNum=self.__motor_num,
@@ -52,13 +71,90 @@ class MotorController(object):
     different types of motors e.g. serial USB motors, bluetooth controlled
     motors, etc.
     """
-    NEXT_MOTOR_ID = 0
+    SPINUP_TIME = 0.3
 
-    def __init__(self):
-        self.motor_id = MotorController.NEXT_MOTOR_ID
-        MotorController.NEXT_MOTOR_ID += 1
+    def __init__(self, motor_ID):
+        self.__motor_ID = motor_ID
 
     def run_motor(self, freq):
-        print("Running motor {id} @ {freq}\n".format(id = self.motor_id,
+        print("Running motor {id} @ {freq}\n".format(id = self.__motor_ID,
                                                    freq=freq
-                                                   ))
+                                                   )
+              )
+
+class SerialMotorController(MotorController):
+    """
+    Class to control a motor through serial comms. We use two USB outputs of a
+    computer connected to two Sparkfun FTDI boards, which are then connected to
+    two Pololu Qik dual-motor controllers. The class uses pySerial to
+    communicate with the controllers.
+    See https://pythonhosted.org/pyserial/pyserial.html#overview for more info
+    on pySerial and cswiki.union.edu/index.php/Tensegrity_Robotics for more
+    info on the project itself.
+
+    :param port: The serial port which the USB is connected to,
+        e.g. /dev/ttyUSB0.
+    :param sub_port: The subset of the USB port which controls this motor,
+        since each USB out controls two motors. This should be either 1 or 2.
+    """
+    def __init__(self, port, motor_ID):
+        super(SerialMotorController, self).__init__(motor_ID)
+        self.__port = port
+        self.controller = serial.Serial(port, 19200, 5, 'N', 1, timeout=0.1)
+
+    def run_motor(self, freq):
+        """
+        Runs the motor at a given frequency. This is fairly complicated, so for
+        a full explanation look at the manual (page 8 in particular):
+        http://www.pololu.com/file/0J59/smc05a_guide.pdf
+
+        In simple terms, each motor is controlled by 4 bytes. Because we are
+        using pySerial, we have to send at least 5 bytes, so we can just ignore
+        the last byte of each message. We can indicate to the controllers which
+        motor to control if we know the number of the motor we are controlling.
+        This is why the SerialMotorController object needs to know its motor
+        number, hence the use of motor_num.
+
+        :param freq: Frequency from -127 to 127
+        """
+        commandBytes = self.__get_command_bytes(freq)
+        self.__spin_up()
+        self.controller.write(commandBytes)
+
+    def stop_motor(self):
+        """
+        Stop the motor immediately.
+        """
+        commandBytes = self.__get_command_bytes(0)
+        self.controller.write(commandBytes)
+
+    def __get_command_bytes(self, freq):
+        """
+        The command bytes we send to the controller are formatted as follows:
+        Byte 1: Start byte - Always 128, indicates start of a signal
+        Byte 2: Device type - Always 0, indicates what we're talking to
+        Byte 3: Motor number & direction - Has three parts:
+            Bit 0: Specifies direction of motor (0 = back, 1 = forward)
+            Bits 1-6: Motor number (Multiply motor_num by 2)
+            Bit 7: Always 0
+        Byte 4: Motor speed - 0 to 127, where 0 is off and 127 is full
+
+        :param freq: -127 to 127
+        """
+        commandBytes = bytearray(5)
+        commandBytes[0] = 128   # Start byte (always 128)
+        commandBytes[1] = 0     # Device type (always 0)
+        direction_bit = 1 if freq < 0 else 0
+        motor_num_bit = self.__motor_ID * 2
+        commandBytes[2] = motor_num_bit + direction_bit
+        commandBytes[3] = abs(freq)
+        return commandBytes
+
+    def __spin_up(self):
+        """
+        Spin up the motor briefly, since lower voltages won't get the motor
+        started.
+        """
+        commandBytes = self.__get_command_bytes(127)
+        self.controller.write(commandBytes)
+        time.sleep(self.SPINUP_TIME)

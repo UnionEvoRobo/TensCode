@@ -41,6 +41,13 @@ class Behavior(object):
         return motor_num_correct
 
     def execute(self, ctrl):
+        """
+        Executes all of the instructions in its instruction list. Each
+        instruction is a dictionary of motor numbers and the frequency to run
+        them at.
+
+        :param ctrl: The motor controller to use.
+        """
         for instr in self.__instr_list:
             ctrl.run_instructions(instr)
 
