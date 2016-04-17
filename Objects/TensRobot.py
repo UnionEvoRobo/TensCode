@@ -1,6 +1,7 @@
+from time import sleep
 from Behavior import Behavior
 from Repertoire import Repertoire
-from Locomotor import Locomotor
+from Locomotor import Locomotor, SerialMotorController
 from Point import Point
 import serial
 
@@ -68,22 +69,51 @@ class TensRobot(object):
         return Point(0,0,0) # FIXME Remove this crap
 
 
-def build_tens():
+class TensBuilder(object):
     """
-    An function that builds a TensRobot. Asks the user for input and allows user
-    to specify which motor has which ID, to determine how many motors the Tens
-    has, and to then save the TensRobot.
+    Object which allows the user to interactive create a TensRobot by assigning
+    a COM port and motors to the correct motors on the actual robot.
     """
-    motor_num = input("How many motors?")
-    valid = False
-    while not valid:
-        comm_port = raw_input("What COM port?")
-        try:
-            test_serial = serial.Serial(comm_port, 19200, 5, 'N', timeout=0.3)
-            user_OK = raw_input("So {COM} is correct? (Y/N)".format(COM=comm_port))
-            if user_OK == "Y":
-                valid = True
-        except:
-            print "Bad COM port! Try again!"
-            continue
+
+    def build_tens(self):
+        """
+        An function that builds a TensRobot. Asks the user for input and allows user
+        to specify which motor has which ID, to determine how many motors the Tens
+        has, and to then save the TensRobot.
+        """
+        motor_num = input("How many motors?")
+        COM_port = self.select_COM_port()
+        test_serial = serial.Serial(COM_port, 19200, 5, 'N', timeout=0.3)
+        motor_list = []
+        for motor_ID in range(motor_num):
+            motor_list.append(self.define_motor(COM_port, motor_ID))
+
+    def select_COM_port(self):
+        COM_port = raw_input("What COM port?")
+        user_OK = False
+        while not user_OK:
+            try:
+                test_serial = serial.Serial(COM_port,
+                                            19200, 5, 'N',
+                                            timeout=0.3)
+                user_OK = raw_input("So {} is correct? (Y/N)".format(COM_port)
+                user_OK = user_OK == "Y"
+            except:
+                print("Bad COM port! Try again!")
+        return COM_port
+
+    def define_motor(self,COM_port, m_ID):
+        """
+        Allow the user to choose which real motor this motor will be
+        controlling. This is used in conjunction with hardware configurations.
+        :param m_ID: ID of the motor.
+        :return: A SerialMotorController object which controls the approriate
+        hardware motor.
+        """
+        cfgdo = raw_input("Configure and test Motor {} now? (Y/N)".format(m_ID))
+        while cfgdo == 'Y':
+            new_motor = SerialMotorController(COM_port, m_ID)
+            new_motor.configure_motor()
+            new_motor.run_motor(127)
+            sleep(5)
 

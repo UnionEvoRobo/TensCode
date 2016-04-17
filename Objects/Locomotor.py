@@ -100,7 +100,7 @@ class SerialMotorController(MotorController):
     def __init__(self, port, motor_ID):
         super(SerialMotorController, self).__init__(motor_ID)
         self.__port = port
-        self.controller = serial.Serial(port, 19200, 5, 'N', 1, timeout=0.1)
+        self.__controller = serial.Serial(port, 19200, 5, 'N', 1, timeout=0.1)
 
     def run_motor(self, freq):
         """
@@ -119,14 +119,14 @@ class SerialMotorController(MotorController):
         """
         commandBytes = self.__get_command_bytes(freq)
         self.__spin_up()
-        self.controller.write(commandBytes)
+        self.__controller.write(commandBytes)
 
     def stop_motor(self):
         """
         Stop the motor immediately.
         """
         commandBytes = self.__get_command_bytes(0)
-        self.controller.write(commandBytes)
+        self.__controller.write(commandBytes)
 
     def __get_command_bytes(self, freq):
         """
@@ -148,6 +148,7 @@ class SerialMotorController(MotorController):
         motor_num_bit = self.__motor_ID * 2
         commandBytes[2] = motor_num_bit + direction_bit
         commandBytes[3] = abs(freq)
+        commandBytes[4] = 0 #last byte empty
         return commandBytes
 
     def __spin_up(self):
@@ -156,7 +157,7 @@ class SerialMotorController(MotorController):
         started.
         """
         commandBytes = self.__get_command_bytes(127)
-        self.controller.write(commandBytes)
+        self.__controller.write(commandBytes)
         time.sleep(self.SPINUP_TIME)
 
     def configure_motor(self):
@@ -185,4 +186,5 @@ class SerialMotorController(MotorController):
         commandBytes[0] = 128
         commandBytes[1] = 2
         commandBytes[2] = self.__motor_ID + 2 # on controllers 0&1 are global
-        self.controller.write(commandBytes)
+        commandBytes[3] = commandBytes[4] = 0 # last two bytes empty
+        self.__controller.write(commandBytes)
