@@ -2,6 +2,7 @@ from Behavior import Behavior
 from Repertoire import Repertoire
 from Locomotor import Locomotor
 from Point import Point
+import serial
 
 class TensRobot(object):
     """
@@ -65,3 +66,24 @@ class TensRobot(object):
     def __curr_location(self):
         # TODO Implement ability for tens to find its location
         return Point(0,0,0) # FIXME Remove this crap
+
+
+def build_tens():
+    """
+    An function that builds a TensRobot. Asks the user for input and allows user
+    to specify which motor has which ID, to determine how many motors the Tens
+    has, and to then save the TensRobot.
+    """
+    motor_num = input("How many motors?")
+    valid = False
+    while not valid:
+        comm_port = raw_input("What COM port?")
+        try:
+            test_serial = serial.Serial(comm_port, 19200, 5, 'N', timeout=0.3)
+            user_OK = raw_input("So {COM} is correct? (Y/N)".format(COM=comm_port))
+            if user_OK == "Y":
+                valid = True
+        except:
+            print "Bad COM port! Try again!"
+            continue
+

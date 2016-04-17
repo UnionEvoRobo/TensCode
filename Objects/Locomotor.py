@@ -158,3 +158,31 @@ class SerialMotorController(MotorController):
         commandBytes = self.__get_command_bytes(127)
         self.controller.write(commandBytes)
         time.sleep(self.SPINUP_TIME)
+
+    def configure_motor(self):
+        """
+        Configure the physical motor controller to accept commands only for
+        this motor. This assigns the physical motor controller slot a number
+        equal to self.motor_ID, which can then be referenced when command bytes
+        are sent.
+
+        Only three command bytes need to be sent to the motor controller to
+        configure it:
+        Byte 1: Start byte - Always 128, indicates start of a signal
+        Byte 2: Change config byte - Always 2, indicates changing configuration
+        Byte 3: New Settings byte - Has two parts:
+            Bits 0-5: Specify motor numbers controller will respond to. If
+            the number is even, controller will control the number and the
+            number above it (e.g. 0x04 means M0 is number 4 and M1 is number 5)
+            Bit 6: controller mode. Keep this at 0 for two motors
+            Bit 7: Always 0
+
+        This function changes the configuration of the controller board itself,
+        not just one motor. Use with care, and only if you understand how this
+        works.
+        """
+        commandBytes = bytearray(5)
+        commandBytes[0] = 128
+        commandBytes[1] = 2
+        commandBytes[2] = self.__motor_ID + 2 # on controllers 0&1 are global
+        self.controller.write(commandBytes)
