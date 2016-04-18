@@ -107,7 +107,7 @@ class TensBuilder(object):
                                             19200, 5, 'N',
                                             timeout=0.3)
                 user_OK = raw_input("So {} is correct? (Y/N)".format(COM_port))
-                user_OK = user_OK == "Y"
+                user_OK = user_OK.upper() == "Y"
             except:
                 print("Bad COM port! Try again!")
         return COM_port

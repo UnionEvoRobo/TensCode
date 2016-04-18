@@ -14,6 +14,9 @@ class Point(object):
         :param y: The vertical location
         :param theta: The heading of the tensegrity
         """
+        assert isinstance(x, int), "x needs to be an int!"
+        assert isinstance(y, int), "y needs to be an int!"
+        assert isinstance(theta, int), "theta needs to be an int!"
         self.x = x
         self.y = y
         self.theta = theta
@@ -66,3 +69,6 @@ class Point(object):
         else:
             msg = 'unsupported operand type(s) for !=: Point and {t}'.format(t=type(other))
             raise TypeError(msg)
+
+    def __str__(self):
+        return "X: {} Y: {} Theta: {}".format(self.x, self.y, self.theta)

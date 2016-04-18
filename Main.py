@@ -1,4 +1,5 @@
 from TensRobot import TensRobot, TensBuilder
+from Point import Point
 import sys
 
 __author__ = 'James Boggs'
@@ -60,24 +61,34 @@ class Main(object):
             else: print("Bad choice!")
 
     def build_tens(self):
-        pass
+        if self.active_tens:
+            save_tens = raw_input("Save the existing tensegrity first? (Y/N)")
+            if save_tens.upper() == "Y":
+                self.save_tens()
+        self.active_tens = self.tens_builder.build_tens()
 
     def load_tens(self):
-        pass
+        print("Not implemented yet!")  # TODO Implement this #procrastination
 
     def test_active(self):
-        pass
+        print("Testing motors...")
+        self.active_tens.test_motors()
 
     def move_tens_to(self):
-        pass
+        tgt_x = input("Target X position? ")
+        tgt_y = input("Target Y position? ")
+        tgt_theta = input("Target heading? ")
+        target = Point(tgt_x, tgt_y, tgt_theta)
+        print("Moving tensegrity to {}".format(target))
+        self.active_tens.move_to_absolute(target)
 
     def run_GA(self):
-        pass
+        print("Not implemented yet!")  # TODO Implement this #procrastination
 
     def build_BR(self):
-        pass
+        print("Not implemented yet!")  # TODO Implement this #procrastination
 
     def save_tens(self):
-        pass
+        print("Not implemented yet!")  # TODO Implement this #procrastination
 
 
