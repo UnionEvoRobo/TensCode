@@ -3,6 +3,7 @@ from Behavior import Behavior
 from Repertoire import Repertoire
 from Locomotor import Locomotor, SerialMotorController
 from Point import Point
+from ImageProcessing import BoardObserver
 import serial
 
 class TensRobot(object):
@@ -10,11 +11,11 @@ class TensRobot(object):
     The representation of the tensegrity robot, including its behavioral
     repertoire and motor controller.
     """
-    def __init__(self, name, locomotor):
+    def __init__(self, name, locomotor, observer):
         self.name = name
         self.__repertoire = Repertoire()
         self.__locomotor = locomotor
-        # TODO Implement a BoardObserver object and make it an instance var
+        self.__board_observer = observer
 
     def move_to_absolute(self, p):
         """
@@ -22,8 +23,8 @@ class TensRobot(object):
         :param p: Point to move the tensegrity to
         """
         assert isinstance(p, Point), "can only move to Points!"
-        while self.__curr_location != p:
-            relative_target = self.__curr_location.find_rel_dist(p)
+        while self.curr_location != p:
+            relative_target = self.curr_location.find_rel_dist(p)
             nav_behavior = self.__repertoire.get_behavior_at(relative_target)
             nav_behavior.execute(self.__locomotor)
 
@@ -35,7 +36,7 @@ class TensRobot(object):
         :param p: Relative distance tens should travel
         """
         assert isinstance(p, Point), "can only move to Points!"
-        origin_location = self.__curr_location
+        origin_location = self.curr_location
         target_location = origin_location + p
         self.move_to_absolute(target_location)
 
@@ -47,9 +48,9 @@ class TensRobot(object):
         :return: A Point representing the relative distance moved
         """
         assert isinstance(bhvr, Behavior), "can only run Behaviors!"
-        origin_location = self.__curr_location
+        origin_location = self.curr_location
         bhvr.execute(self.__locomotor)
-        rel_distance = origin_location.find_rel_dist(self.__curr_location)
+        rel_distance = origin_location.find_rel_dist(self.curr_location)
         return rel_distance
 
     def add_behavior(self, bhvr, p_time, rel_dist):
@@ -69,9 +70,8 @@ class TensRobot(object):
     def test_motors(self): self.__locomotor.test_motors()
 
     @property
-    def __curr_location(self):
-        # TODO Implement ability for tens to find its location
-        return Point(0,0,0) # FIXME Remove this crap
+    def curr_location(self):
+        return self.__board_observer.tens_location
 
 
 class TensBuilder(object):
@@ -94,6 +94,7 @@ class TensBuilder(object):
         for motor_ID in range(motor_num):
             motor_list.append(self.define_motor(COM_port, motor_ID))
         new_locomotor = Locomotor(motor_list)
+
         new_tens = TensRobot(tens_name, new_locomotor)
         return new_tens
 
