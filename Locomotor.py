@@ -1,6 +1,7 @@
 import time
 import serial
 from json import loads, dumps
+from ObjectConstants import RUN_TIME
 
 class Locomotor(object):
     """
@@ -31,8 +32,17 @@ class Locomotor(object):
         assert len(freq_dict) == self.__motor_num, "invalid motor amount"
         for mNum in freq_dict.keys():
             self.__motor_dict[mNum].run_motor(freq_dict[mNum])
+        time.sleep(RUN_TIME)
+        for mNum in freq_dict.keys():
+            self.__motor_dict[mNum].stop_motor()
 
     def get_motor_num(self): return self.__motor_num
+
+    def test_motors(self):
+        for m_num in self.__motor_dict:
+            print("Testing motor {}".format(m_num))
+            self.__motor_dict[m_num].run_motor(127)
+            time.sleep(RUN_TIME)
 
     def __len__(self):
         return self.__motor_num

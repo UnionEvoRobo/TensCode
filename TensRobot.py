@@ -10,7 +10,8 @@ class TensRobot(object):
     The representation of the tensegrity robot, including its behavioral
     repertoire and motor controller.
     """
-    def __init__(self, locomotor):
+    def __init__(self, name, locomotor):
+        self.name = name
         self.__repertoire = Repertoire()
         self.__locomotor = locomotor
         # TODO Implement a BoardObserver object and make it an instance var
@@ -65,6 +66,7 @@ class TensRobot(object):
     def update_motor(self, motor_num, new_motor):
         self.__locomotor[motor_num] = new_motor
 
+    def test_motors(self): self.__locomotor.test_motors()
 
     @property
     def __curr_location(self):
@@ -84,13 +86,15 @@ class TensBuilder(object):
         to specify which motor has which ID, to determine how many motors the Tens
         has, and to then save the TensRobot.
         """
+        print("Creating a new tensegrity...")
+        tens_name = raw_input("Name the tensegrity!")
         motor_num = input("How many motors?")
         COM_port = self.select_COM_port()
         motor_list = []
         for motor_ID in range(motor_num):
             motor_list.append(self.define_motor(COM_port, motor_ID))
         new_locomotor = Locomotor(motor_list)
-        new_tens = TensRobot(new_locomotor)
+        new_tens = TensRobot(tens_name, new_locomotor)
         return new_tens
 
 
