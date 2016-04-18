@@ -93,7 +93,7 @@ class SerialMotorController(MotorController):
     info on the project itself.
 
     :param port: The serial port which the USB is connected to,
-        e.g. /dev/ttyUSB0.
+        e.g. /dev/ttyUSB0 or COM1.
     :param sub_port: The subset of the USB port which controls this motor,
         since each USB out controls two motors. This should be either 1 or 2.
     """

@@ -62,6 +62,9 @@ class TensRobot(object):
         """
         return self.__repertoire.add_behavior(bhvr, p_time, rel_dist)
 
+    def update_motor(self, motor_num, new_motor):
+        self.__locomotor[motor_num] = new_motor
+
 
     @property
     def __curr_location(self):
@@ -83,10 +86,13 @@ class TensBuilder(object):
         """
         motor_num = input("How many motors?")
         COM_port = self.select_COM_port()
-        test_serial = serial.Serial(COM_port, 19200, 5, 'N', timeout=0.3)
         motor_list = []
         for motor_ID in range(motor_num):
             motor_list.append(self.define_motor(COM_port, motor_ID))
+        new_locomotor = Locomotor(motor_list)
+        new_tens = TensRobot(new_locomotor)
+        return new_tens
+
 
     def select_COM_port(self):
         COM_port = raw_input("What COM port?")
@@ -96,7 +102,7 @@ class TensBuilder(object):
                 test_serial = serial.Serial(COM_port,
                                             19200, 5, 'N',
                                             timeout=0.3)
-                user_OK = raw_input("So {} is correct? (Y/N)".format(COM_port)
+                user_OK = raw_input("So {} is correct? (Y/N)".format(COM_port))
                 user_OK = user_OK == "Y"
             except:
                 print("Bad COM port! Try again!")
@@ -110,10 +116,10 @@ class TensBuilder(object):
         :return: A SerialMotorController object which controls the approriate
         hardware motor.
         """
-        cfgdo = raw_input("Configure and test Motor {} now? (Y/N)".format(m_ID))
-        while cfgdo == 'Y':
-            new_motor = SerialMotorController(COM_port, m_ID)
-            new_motor.configure_motor()
-            new_motor.run_motor(127)
-            sleep(5)
-
+        raw_input("Hit enter to configure and test Motor {}".format(m_ID))
+        new_motor = SerialMotorController(COM_port, m_ID)
+        new_motor.configure_motor()
+        new_motor.run_motor(127)
+        sleep(5)
+        new_motor.stop_motor()
+        return new_motor
