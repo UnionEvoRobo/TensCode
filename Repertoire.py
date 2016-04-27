@@ -7,8 +7,8 @@ class Repertoire(object):
     the right set of Behaviors to move to a goal.
     """
     def __init__(self):
-        self.__perform_times = np.array(dtype=int)
-        self.__behaviors = np.array(dtype=Behavior)
+        self.__perform_times = np.array([],dtype=np.uint8)
+        self.__behaviors = np.array([], dtype=Behavior)
 
     def get_performance_at(self, p):
         """

@@ -87,44 +87,31 @@ class TensBuilder(object):
         has, and to then save the TensRobot.
         """
         print("Creating a new tensegrity...")
-        tens_name = raw_input("Name the tensegrity!")
-        motor_num = input("How many motors?")
+        tens_name = raw_input("Name the tensegrity!  ")
+        motor_num = input("How many motors?  ")
         COM_port = self.select_COM_port()
         motor_list = []
         for motor_ID in range(motor_num):
-            motor_list.append(self.define_motor(COM_port, motor_ID))
-        new_locomotor = Locomotor(motor_list)
+            new_controller = SerialMotorController(motor_ID)
+            motor_list.append(new_controller)
+        new_locomotor = Locomotor(COM_port, motor_list)
+        new_locomotor.config_motors()
+        new_locomotor.test_motors()
 
-        new_tens = TensRobot(tens_name, new_locomotor)
+        new_tens = TensRobot(tens_name, new_locomotor, None)
         return new_tens
 
 
     def select_COM_port(self):
-        COM_port = raw_input("What COM port?")
         user_OK = False
         while not user_OK:
+            COM_port = raw_input("What COM port?  ")
             try:
                 test_serial = serial.Serial(COM_port,
-                                            19200, 5, 'N',
-                                            timeout=0.3)
-                user_OK = raw_input("So {} is correct? (Y/N)".format(COM_port))
+                                            19200, 8, 'N',
+                                            timeout=0.8)
+                user_OK = raw_input("So {} is correct? (Y/N)  ".format(COM_port))
                 user_OK = user_OK.upper() == "Y"
             except:
-                print("Bad COM port! Try again!")
+                print("Bad COM port {}! Try again!".format(COM_port))
         return COM_port
-
-    def define_motor(self,COM_port, m_ID):
-        """
-        Allow the user to choose which real motor this motor will be
-        controlling. This is used in conjunction with hardware configurations.
-        :param m_ID: ID of the motor.
-        :return: A SerialMotorController object which controls the approriate
-        hardware motor.
-        """
-        raw_input("Hit enter to configure and test Motor {}".format(m_ID))
-        new_motor = SerialMotorController(COM_port, m_ID)
-        new_motor.configure_motor()
-        new_motor.run_motor(127)
-        sleep(5)
-        new_motor.stop_motor()
-        return new_motor

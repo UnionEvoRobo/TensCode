@@ -47,7 +47,11 @@ class Main(object):
                 3. Exit
                 """
 
-            user_choice = input(">> ")
+            print(home_msg)
+            try:
+                user_choice = input(">> ")
+            except:
+                print("Invalid choice!")
 
             if user_choice == 1: self.build_tens()
             elif user_choice == 2: self.load_tens()
@@ -92,3 +96,5 @@ class Main(object):
         print("Not implemented yet!")  # TODO Implement this #procrastination
 
 
+if __name__ == "__main__":
+    control = Main()
