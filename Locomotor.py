@@ -1,5 +1,6 @@
 import time
 import serial
+from math import ceil
 from json import loads, dumps
 from ObjectConstants import RUN_TIME
 
@@ -22,6 +23,7 @@ class Locomotor(object):
             self.__motor_num = len(motor_list)
             self.__motor_dict = dict(zip(range(self.__motor_num), motor_list))
             self.__ctrl = serial.Serial(port, 19200, 8, 'N', 1, timeout=0.1)
+            self.__setup_controllers()
 
     def run_instructions(self, freq_dict):
         """
@@ -38,17 +40,32 @@ class Locomotor(object):
 
     def get_motor_num(self): return self.__motor_num
 
-    def config_motors(self):
+    def __setup_controllers(self):
         print(
 """INSTRUCTIONS FOR CONFIGURATION:
-1) Label each motor controller from 1 to N, where N= num of motor controllers
-2) Each motor in the Locomotor's list will ask to be configured.
-3) It will give you a motor controller to attach to the FTDI Basic.
-4) Un
+1) Label each motor controller from 1 to N, where N = num of motor controllers
+2) Remove every motor controller from the breadboard
+3) Each motor controller will ask to be configured
+4) It will give you a motor controller to attach to the FTDI Basic.
+5) Plug that motor controller into the breadboard, then hit enter.
 """
               )
-        for m_num in self.__motor_dict:
-            print("Configure motor {}".format(m_num))
+        for ctrl_num in range(int(ceil(self.__motor_num/2.0))):
+
+            print("Configure motor controller {}? (Y/N)  ".format(ctrl_num))
+            choice = raw_input()
+            if choice.upper() == 'Y':
+                command_bytes = bytearray(8)
+                command_bytes[0] = 0xAA
+                command_bytes[1] = 0x09
+                command_bytes[2] = 0x04
+                command_bytes[3] = 0x00
+                command_bytes[4] = ctrl_num
+                command_bytes[5] = 0x55
+                command_bytes[6] = 0x2A
+                command_bytes[7] = 0x00
+                self.__ctrl.write(command_bytes)
+
 
     def test_motors(self):
         for m_num in self.__motor_dict:
@@ -153,24 +170,28 @@ class SerialMotorController(MotorController):
     def __get_command_bytes(self, freq):
         """
         The command bytes we send to the controller are formatted as follows:
-        Byte 1: Start byte - Always 128, indicates start of a signal
-        Byte 2: Device type - Always 0, indicates what we're talking to
-        Byte 3: Motor number & direction - Has three parts:
-            Bit 0: Specifies direction of motor (0 = back, 1 = forward)
-            Bits 1-6: Motor number (Multiply motor_num by 2)
-            Bit 7: Always 0
+        Byte 1: Start byte - Always 0xAA, indicates start of a signal
+        Byte 2: Device ID - Which motor controller to reference
+        Byte 3: Motor num/direction - 0x09 is M0 forward, 0x0A is M0 reverse
+                                      0x0C is M1 forward, 0x0E is M1 reverse
         Byte 4: Motor speed - 0 to 127, where 0 is off and 127 is full
 
         :param freq: -127 to 127
         """
         commandBytes = bytearray(5)
-        commandBytes[0] = 128   # Start byte (always 128)
-        commandBytes[1] = 0     # Device type (always 0)
-        direction_bit = 1 if freq < 0 else 0
-        motor_num_bit = self.__motor_ID * 2
-        commandBytes[2] = motor_num_bit + direction_bit
+        commandBytes[0] = 0xAA   # Start byte (always 0xAA)
+        commandBytes[1] = self.__motor_ID/2 + 1  # Device id
+        if freq < 0:
+            if self.__motor_ID % 2 == 0:
+                commandBytes[2] = 0x0A
+            else:
+                commandBytes[2] = 0x0E
+        else:
+            if self.__motor_ID % 2 == 0:
+                commandBytes[2] = 0x09
+            else:
+                commandBytes[2] = 0x0C
         commandBytes[3] = abs(freq)
-        commandBytes[4] = 0 #last byte empty
         return commandBytes
 
     def __spin_up(self, ctrl):
@@ -181,32 +202,3 @@ class SerialMotorController(MotorController):
         commandBytes = self.__get_command_bytes(127)
         ctrl.write(commandBytes)
         time.sleep(self.SPINUP_TIME)
-
-    def configure_motor(self, ctrl):
-        """
-        Configure the physical motor controller to accept commands only for
-        this motor. This assigns the physical motor controller slot a number
-        equal to self.motor_ID, which can then be referenced when command bytes
-        are sent.
-
-        Only three command bytes need to be sent to the motor controller to
-        configure it:
-        Byte 1: Start byte - Always 128, indicates start of a signal
-        Byte 2: Change config byte - Always 2, indicates changing configuration
-        Byte 3: New Settings byte - Has two parts:
-            Bits 0-5: Specify motor numbers controller will respond to. If
-            the number is even, controller will control the number and the
-            number above it (e.g. 0x04 means M0 is number 4 and M1 is number 5)
-            Bit 6: controller mode. Keep this at 0 for two motors
-            Bit 7: Always 0
-
-        This function changes the configuration of the controller board itself,
-        not just one motor. Use with care, and only if you understand how this
-        works.
-        """
-        commandBytes = bytearray(5)
-        commandBytes[0] = 128
-        commandBytes[1] = 2
-        commandBytes[2] = self.__motor_ID + 2 # on controllers 0&1 are global
-        commandBytes[3] = commandBytes[4] = 0 # last two bytes empty
-        ctrl.write(commandBytes)

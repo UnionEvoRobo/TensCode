@@ -95,7 +95,6 @@ class TensBuilder(object):
             new_controller = SerialMotorController(motor_ID)
             motor_list.append(new_controller)
         new_locomotor = Locomotor(COM_port, motor_list)
-        new_locomotor.config_motors()
         new_locomotor.test_motors()
 
         new_tens = TensRobot(tens_name, new_locomotor, None)
