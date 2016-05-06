@@ -33,7 +33,7 @@ class Behavior(object):
         :param instruction: A dict, where the keys is the motor controller ID
         and the value is that motor's frequency.
         """
-        assert instruction is dict, "instruction is not a dict!"
+        assert isinstance(instruction, dict), "instruction is not a dict!"
         motor_num_correct = len(instruction) == self.__num_motors
         for freq in instruction.values():
             if not (MOTOR_LOWER_BOUND < freq < MOTOR_UPPER_BOUND):

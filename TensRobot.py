@@ -48,10 +48,22 @@ class TensRobot(object):
         :return: A Point representing the relative distance moved
         """
         assert isinstance(bhvr, Behavior), "can only run Behaviors!"
-        origin_location = self.curr_location
+        if self.__board_observer is not None:
+            origin_location = self.curr_location
         bhvr.execute(self.__locomotor)
-        rel_distance = origin_location.find_rel_dist(self.curr_location)
-        return rel_distance
+        if self.__board_observer is not None:
+            rel_distance = origin_location.find_rel_dist(self.curr_location)
+            return rel_distance
+
+    def run_freqs(self, freq_list):
+        """
+        Run a list of frequencies on the motors, where the index of the
+        frequency is the motor number to run.
+        :param freq_list: List of ints with values -127 to 127
+        """
+        freq_dict = dict(zip(range(len(freq_list)), freq_list))
+        bhvr = Behavior([freq_dict], len(freq_list))
+        self.run_behavior(bhvr)
 
     def add_behavior(self, bhvr, p_time, rel_dist):
         """
@@ -97,7 +109,8 @@ class TensBuilder(object):
         new_locomotor = Locomotor(COM_port, motor_list)
         new_locomotor.test_motors()
 
-        new_tens = TensRobot(tens_name, new_locomotor, None)
+        new_observer = None  # BoardObserver()
+        new_tens = TensRobot(tens_name, new_locomotor, new_observer)
         return new_tens
 
 

@@ -38,6 +38,7 @@ class Main(object):
                 6. Run genetic algorithm
                 7. Build behavioral repertoire
                 8. Save tensegrity
+                9. Run Frequencies
                 """.format(self.active_tens.name)
             else:
                 home_msg = """
@@ -62,6 +63,7 @@ class Main(object):
             elif user_choice == 6: self.run_GA()
             elif user_choice == 7: self.build_BR()
             elif user_choice == 8: self.save_tens()
+            elif user_choice == 9: self.run_freqs()
             else: print("Bad choice!")
 
     def build_tens(self):
@@ -86,6 +88,14 @@ class Main(object):
         print("Moving tensegrity to {}".format(target))
         self.active_tens.move_to_absolute(target)
 
+    def run_freqs(self):
+        m_num = input("Num of motors?")
+        freqs = []
+        for x in range(m_num):
+            freq = input("Frequency? ")
+            freqs.append(freq)
+        self.active_tens.run_freqs(freqs)
+
     def run_GA(self):
         print("Not implemented yet!")  # TODO Implement this #procrastination
 
@@ -97,4 +107,9 @@ class Main(object):
 
 
 if __name__ == "__main__":
-    control = Main()
+    #control = Main()
+    VALTR = TensBuilder().build_tens()
+    for f1 in range(-127, 127, 16):
+        for f2 in range(-127,127, 16):
+            for f3 in range(-127,127, 16):
+                VALTR.run_freqs([f1, f2, f3])

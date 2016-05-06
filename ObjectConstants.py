@@ -3,7 +3,7 @@ import numpy
 Holds various constants for use throughout the Objects package.
 """
 MOTOR_COUNT         = 3
-MOTOR_LOWER_BOUND   = -127
+MOTOR_LOWER_BOUND   = -128
 MOTOR_UPPER_BOUND   = 128
 DISCRETIZATION      = 1
 RUN_TIME            = 1
