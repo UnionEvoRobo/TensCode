@@ -109,7 +109,6 @@ class Main(object):
 if __name__ == "__main__":
     #control = Main()
     VALTR = TensBuilder().build_tens()
-    for f1 in range(-127, 127, 16):
-        for f2 in range(-127,127, 16):
-            for f3 in range(-127,127, 16):
-                VALTR.run_freqs([f1, f2, f3])
+    while True:
+        VALTR.test_motors()
+        raw_input("AGAIN?")

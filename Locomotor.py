@@ -180,7 +180,7 @@ class SerialMotorController(MotorController):
         """
         commandBytes = bytearray(5)
         commandBytes[0] = 0xAA   # Start byte (always 0xAA)
-        commandBytes[1] = self.__motor_ID/2 + 1  # Device id
+        commandBytes[1] = self.__motor_ID/2  # Device id
         if freq < 0:
             if self.__motor_ID % 2 == 0:
                 commandBytes[2] = 0x0A
@@ -188,7 +188,7 @@ class SerialMotorController(MotorController):
                 commandBytes[2] = 0x0E
         else:
             if self.__motor_ID % 2 == 0:
-                commandBytes[2] = 0x09
+                commandBytes[2] = 0x08
             else:
                 commandBytes[2] = 0x0C
         commandBytes[3] = abs(freq)
