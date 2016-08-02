@@ -1,0 +1,43 @@
+#0  Eigen::internal::generic_dense_assignment_kernel<Eigen::internal::evaluator<Eigen::Matrix<double, -1, -1, 0, -1, -1> >, Eigen::internal::evaluator<Eigen::Matrix<double, -1, -1, 0, -1, -1> >, Eigen::internal::assign_op<double>, 0>::assignPacket<32, 32, double __vector(4)>(long) (
+    index=0, this=<synthetic pointer>) at /usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:598
+
+#1  Eigen::internal::dense_assignment_loop<Eigen::internal::generic_dense_assignment_kernel<Eigen::internal::evaluator<Eigen::Matrix<double, -1, -1, 0, -1, -1> >, Eigen::internal::evaluator<Eigen::Matrix<double, -1, -1, 0, -1, -1> >, Eigen::internal::assign_op<double>, 0>, 3, 0>::run
+    (kernel=<synthetic pointer>) at /usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:386
+
+#2  Eigen::internal::call_dense_assignment_loop<Eigen::Matrix<double, -1, -1, 0, -1, -1>, Eigen::Matrix<double, -1, -1, 0, -1, -1>, Eigen::internal::assign_op<double> > (dst=..., src=..., func=...) at /usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:653
+
+#3  0x00007ffff74ee209 in Eigen::internal::call_assignment<Eigen::Matrix<double, -1, -1, 0, -1, -1>, Eigen::Matrix<double, -1, -1, 0, -1, -1>, Eigen::internal::assign_op<double> >(Eigen::Matrix<double, -1, -1, 0, -1, -1>&, Eigen::Matrix<double, -1, -1, 0, -1, -1> const&, Eigen::internal::assign_op<double> const&, Eigen::internal::enable_if<!Eigen::internal::evaluator_assume_aliasing<Eigen::Matrix<double, -1, -1, 0, -1, -1>, Eigen::internal::evaluator_traits<Eigen::Matrix<double, -1, -1, 0, -1, -1> >::Shape>::value, void*>::type) (func=..., src=..., dst=...)
+    at /usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:712
+
+#4  Eigen::internal::call_assignment<Eigen::Matrix<double, -1, -1, 0, -1, -1>, Eigen::Matrix<double, -1, -1, 0, -1, -1> > (src=..., dst=...)
+    at /usr/include/eigen3/Eigen/src/Core/AssignEvaluator.h:693
+
+#5  Eigen::PlainObjectBase<Eigen::Matrix<double, -1, -1, 0, -1, -1> >::_set<Eigen::Matrix<double, -1, -1, 0, -1, -1> > (other=...,
+    this=0x7fffffff9a88) at /usr/include/eigen3/Eigen/src/Core/PlainObjectBase.h:682
+
+#6  Eigen::Matrix<double, -1, -1, 0, -1, -1>::operator= (other=..., this=0x7fffffff9a88) at /usr/include/eigen3/Eigen/src/Core/Matrix.h:208
+
+#7  libcmaes::CMASolutions::operator= (this=0x7fffffff9a70) at cmasolutions.h:41
+
+#8  0x00007ffff756966f in libcmaes::IPOPCMAStrategy<libcmaes::ACovarianceUpdate, libcmaes::GenoPheno<libcmaes::pwqBoundStrategy, libcmaes::NoScalingStrategy> >::capture_best_solution (this=this@entry=0x7fffffff9e10, best_run=...) at ipopcmastrategy.cc:106
+
+#9  0x00007ffff75716b5 in libcmaes::IPOPCMAStrategy<libcmaes::ACovarianceUpdate, libcmaes::GenoPheno<libcmaes::pwqBoundStrategy, libcmaes::NoScalingStrategy> >::optimize(std::function<void (Eigen::Matrix<double, -1, -1, 0, -1, -1> const&, Eigen::Matrix<double, -1, -1, 0, -1, -1> const&)> const&, std::function<Eigen::Matrix<double, -1, -1, 0, -1, -1> ()> const&, std::function<void ()> const&) (this=this@entry=0x7fffffff9e10, 
+    evalf=..., askf=..., tellf=...) at ipopcmastrategy.cc:67
+
+#10 0x0000000000424b1e in libcmaes::IPOPCMAStrategy<libcmaes::ACovarianceUpdate, libcmaes::GenoPheno<libcmaes::pwqBoundStrategy, libcmaes::NoScalingStrategy> >::optimize (this=0x7fffffff9e10) at /usr/local/include/libcmaes/ipopcmastrategy.h:86
+
+#11 libcmaes::ESOptimizer<libcmaes::IPOPCMAStrategy<libcmaes::ACovarianceUpdate, libcmaes::GenoPheno<libcmaes::pwqBoundStrategy, libcmaes::NoScalingStrategy> >, libcmaes::CMAParameters<libcmaes::GenoPheno<libcmaes::pwqBoundStrategy, libcmaes::NoScalingStrategy> >, libcmaes::CMASolutions>::optimize (this=this@entry=0x7fffffff9e10) at /usr/local/include/libcmaes/esoptimizer.h:115
+
+#12 0x00000000004281ab in libcmaes::cmaes<libcmaes::GenoPheno<libcmaes::pwqBoundStrategy, libcmaes::NoScalingStrategy> >(std::function<double (double const*, int const&)>&, libcmaes::CMAParameters<libcmaes::GenoPheno<libcmaes::pwqBoundStrategy, libcmaes::NoScalingStrategy> >&, std::function<int (libcmaes::CMAParameters<libcmaes::GenoPheno<libcmaes::pwqBoundStrategy, libcmaes::NoScalingStrategy> > const&, libcmaes::CMASolutions const&)>&, std::function<Eigen::Matrix<double, -1, 1, 0, -1, 1> (double const*, int const&)>, libcmaes::CMASolutions const&, std::function<int (libcmaes::CMAParameters<libcmaes::GenoPheno<libcmaes::pwqBoundStrategy, libcmaes::NoScalingStrategy> > const&, libcmaes::CMASolutions const&, std::basic_ofstream<char, std::char_traits<char> >&)>&) (func=..., parameters=..., pfunc=..., gfunc=..., solutions=..., pffunc=...)
+    at /usr/local/include/libcmaes/cmaes.h:146
+
+#13 0x0000000000429a95 in limbo::opt::Cmaes<Params>::_opt_bounded<std::function<double (double const*, int const&)> >(std::function<double (double const*, int const&)>&, int, Eigen::Matrix<double, -1, 1, 0, -1, 1> const&) const (this=this@entry=0x7fffffffd8e8, f_cmaes=..., dim=3,
+    init=...) at /home/james/Desktop/limbo/src/limbo/opt/cmaes.hpp:105
+
+#14 0x0000000000443b37 in limbo::opt::Cmaes<Params>::operator()<void limbo::bayes_opt::BOptimizer<Params, limbo::statsfun<boost::fusion::vector<limbo::stat::ConsoleSummary<Params>, limbo::stat::Samples<Params>, limbo::stat::Observations<Params>, limbo::stat::GP<Params> > >, limbo::mode---Type <return> to continue, or q <return> to quit---
+lfun<limbo::model::GP<Params, limbo::kernel::Exp<Params>, limbo::mean::Prior<Params>, limbo::model::gp::NoLFOpt<Params> > >, limbo::acquifun<limbo::acqui::UCB<Params, limbo::model::GP<Params, limbo::kernel::Exp<Params>, limbo::mean::Prior<Params>, limbo::model::gp::NoLFOpt<Params> > > >, boost::parameter::void_, boost::parameter::void_, boost::parameter::void_>::optimize<Eval, limbo::FirstElem>(Eval const&, limbo::FirstElem const&, bool)::{lambda(Eigen::Matrix<double, -1, 1, 0, -1, 1> const&, bool)#1}>(void limbo::bayes_opt::BOptimizer<Params, limbo::statsfun<boost::fusion::vector<limbo::stat::ConsoleSummary<Params>, limbo::stat::Samples<Params>, limbo::stat::Observations<Params>, limbo::stat::GP<Params> > >, limbo::modelfun<limbo::model::GP<Params, limbo::kernel::Exp<Params>, limbo::mean::Prior<Params>, limbo::model::gp::NoLFOpt<Params> > >, limbo::acquifun<limbo::acqui::UCB<Params, limbo::model::GP<Params, limbo::kernel::Exp<Params>, limbo::mean::Prior<Params>, limbo::model::gp::NoLFOpt<Params> > > >, boost::parameter::void_, boost::parameter::void_, boost::parameter::void_>::optimize<Eval, limbo::FirstElem>(Eval const&, limbo::FirstElem const&, bool)::{lambda(Eigen::Matrix<double, -1, 1, 0, -1, 1> const&, bool)#1} const&, Eigen::Matrix<double, -1, 1, 0, -1, 1> const&, double) const (bounded=1, init=..., f=..., this=0x7fffffffd8e8) at /home/james/Desktop/limbo/src/limbo/opt/cmaes.hpp:56
+
+#15 limbo::bayes_opt::BOptimizer<Params, limbo::statsfun<boost::fusion::vector<limbo::stat::ConsoleSummary<Params>, limbo::stat::Samples<Params>, limbo::stat::Observations<Params>, limbo::stat::GP<Params> > >, limbo::modelfun<limbo::model::GP<Params, limbo::kernel::Exp<Params>, limbo::mean::Prior<Params>, limbo::model::gp::NoLFOpt<Params> > >, limbo::acquifun<limbo::acqui::UCB<Params, limbo::model::GP<Params, limbo::kernel::Exp<Params>, limbo::mean::Prior<Params>, limbo::model::gp::NoLFOpt<Params> > > >, boost::parameter::void_, boost::parameter::void_, boost::parameter::void_>::optimize<Eval, limbo::FirstElem> (this=this@entry=0x7fffffffe4d0, sfun=..., afun=..., reset=reset@entry=true)
+    at /home/james/Desktop/limbo/src/limbo/bayes_opt/boptimizer.hpp:114
+
+#16 0x00000000004164e0 in main (argc=1, argv=0x7fffffffe8e8) at ../exp/voltaire/main.cpp:369
