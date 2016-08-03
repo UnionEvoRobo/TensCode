@@ -31,6 +31,7 @@ class Observer
     void clearFrame();
     int getCodec();
     Size getFrameSize();
+    bool isHome();
 
   private:
     VideoCapture cap;

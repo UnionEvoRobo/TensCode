@@ -45,12 +45,12 @@ struct Params {
     // options for the initializer
     struct init_randomsampling {
         //BO_PARAM(int, samples, 10);
-        BO_PARAM(int, samples, 10);
+        BO_PARAM(int, samples, 20);
     };
 
     // options for the stopping criteria
     struct stop_maxiterations {
-        BO_PARAM(int, iterations, 40);
+        BO_PARAM(int, iterations, 80);
     };
     struct kernel_exp
     {
@@ -65,7 +65,7 @@ struct Params {
             // actual behavior, the more optimistic we are
 
             //JB says - keep it around average of random trials
-            BO_PARAM(double, constant, 0.05);
+            BO_PARAM(double, constant, 0.5);
         };
 
     struct acqui_ucb {
@@ -73,7 +73,7 @@ struct Params {
       // exploit --> smaller values
       // explore --> bigger values
       // (scaled relative to performance of Eval)
-      BO_PARAM(double, alpha, 0.2);
+      BO_PARAM(double, alpha, 0.5);
         };
 
     // options for the hyper-parameter optimizer
@@ -98,6 +98,15 @@ struct Eval {
     {
         //Create the tensegrity controller
         tensegrity::Tensegrity_Controller tens(global::serialPort);
+
+        // Ensure tensegrity is in the center
+        while(!global::eye.isHome()) {
+          usleep(500000);
+          global::eye.updateLocationInfo();
+          std::cout << "Move the tensegrity to the center!" << std::endl;
+        }
+
+        std::cout << x.transpose() << std::endl;
 
         // Create output file name prefix
         std::stringstream outFilePrefixStream;
@@ -141,7 +150,6 @@ struct Eval {
 
         do {
           retry = 0;
-        std::cout << x.transpose() << std::endl;
         // we have determined that negative motor values produce
         // distinct behaviors from postive ones in some cases
         // and so have expanded the range of values accordingly.
@@ -284,17 +292,17 @@ struct Eval {
 
         res(0) = d;
 
-        std::string str;
-        std::cout<<"Press y to restart, x to zero value, any other key to continue" << std::endl;
-        std::cin >> str;
-        if (str == "y")
-          retry = 1;
-        else if (str == "x")
-        {
-          d = 0;
-          res(0) = d;
-        }
-
+      //   std::string str;
+      //   std::cout<<"Press y to restart, x to zero value, any other key to continue" << std::endl;
+      //   std::cin >> str;
+      //   if (str == "y")
+      //     retry = 1;
+      //   else if (str == "x")
+      //   {
+      //     d = 0;
+      //     res(0) = d;
+      //   }
+      //
       }while (retry == 1);
 
       distances.push_back(res(0));
@@ -422,7 +430,7 @@ int main(int argc, char** argv) {
   time_t t = time(0);
   struct tm * now = localtime( & t );
   std::stringstream outputDirectoryName;
-  outputDirectoryName << "/home/james/Desktop/limbo/build/exp/voltaire/TEST_"
+  outputDirectoryName << "/home/james/Desktop/TensCode/TEST_"
                       << (now->tm_year + 1900) << '-'
                       << (now->tm_mon + 1) << '-'
                       <<  now->tm_mday << "-"

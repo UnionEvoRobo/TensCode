@@ -260,6 +260,14 @@ Observer::Observer( int camNum, bool GET_PUFFS ) {
   }
 }
 
+bool Observer::isHome() {
+  Size frameSize = getFrameSize();
+  Point2f vidCenter( frameSize.width / 2, frameSize.height / 2 );
+  float tensDisplacement = sqrt( abs( (center.x - vidCenter.x) * (center.x - vidCenter.x) + (center.y - vidCenter.y) * (center.y - vidCenter.y) ) );
+  std::cout << "Tens is " << tensDisplacement << " units from the center." << std::endl;
+  return ( tensDisplacement <= 50);
+}
+
 void Observer::getNewPuffVals() {
   std::cout << "Choose red puff ball values..." << std::endl;
   get_puff_vals(cap, red_puff_vals);
